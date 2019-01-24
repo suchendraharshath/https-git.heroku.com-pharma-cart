@@ -8,11 +8,11 @@
     <form #ref="ngForm" (ngSubmit)="add(ref.value)">
       <div class="form-group">
       <label class="text-danger" for="#a">Username</label>
-      <input type="text" name="Username" class="form-control" id="a" [(ngModel)]=Username>
+      <input type="text" name="Username" class="form-control" id="a" [(ngModel)]=Username  #ref1="ngModel">
       </div>
       <div class="form-group">
         <label class="text-danger" for="#b">Password</label>
-        <input type="password" name="password" class="form-control" id="b" [(ngModel)]=password>
+        <input type="password" name="password" class="form-control" id="b" [(ngModel)]=password  #ref2="ngModel">
       </div>
     <a routerLink='forgotpassword'>ForgotPassword?</a>
     <button type="submit" class="btn btn-info ml-5">Login</button>
