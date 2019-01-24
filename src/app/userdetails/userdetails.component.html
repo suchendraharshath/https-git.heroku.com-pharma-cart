@@ -1,0 +1,28 @@
+<div class="row mt-3">
+  <form #ref=ngForm>
+      <div class="form-group">
+      <input type="text" name="search" class="form-control ml-3 mt-3" placeholder="enter name,username.." [(ngModel)]=searchTerm> 
+      </div>
+  </form>
+  </div>
+  <div class="row mt-3"> 
+    <div class="col-2"></div>
+    <div class="col-9">
+      <table class="table table-striped table-bordered">
+          <thead>
+            <th style="color:blue">Customer name</th>
+            <th style="color:blue">Email id</th>
+            <th style="color:blue">userName</th>
+          </thead>
+          <tr *ngFor="let i of data | search:searchTerm | paginate:{itemsPerPage:3, currentPage:p}">
+            <td>{{i.firstname}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.Username}}</td>
+          </tr>
+        </table>
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      </div>
+      
+    <div class="col-1"></div>
+  </div>
+  

@@ -1,0 +1,19 @@
+        <table class="table table-bordered mt-3">
+            <thead class="thead-light">
+              <th>sno</th>
+             <th>medicinename</th>
+              <th>price</th>
+              <th>Expiry Date</th>
+              <th>add to cart</th>
+            </thead>
+            <tr *ngFor="let i of data ; let in=index">
+              <td>{{in+1}}</td>
+              <td>{{i.medicine}}</td>
+              <td>{{i.price}}</td>
+              <td>{{i.date}}</td>
+              <td>
+                <button type="button" class="btn-info" (click)="sendto(i)"><i class="fas fa-cart-plus"></i></button>
+              </td>
+            </tr>
+          </table>
+  

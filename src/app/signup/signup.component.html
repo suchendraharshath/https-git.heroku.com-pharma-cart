@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <br/>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+          <div class="jumbotron">
+                <h5 class="text-center text-success"><i class="fas fa-users fa-5x "></i></h5> 
+      <h2 class="text-center" style="color:blue">SignUp page</h2>
+      <form #ref="ngForm" (ngSubmit)="add(ref.value)">
+      <div class="form-group">
+          <label style="color:black">Enter FirstName:</label>
+          <input type="text" name="firstname" class="form-control" #ref1="ngModel" [(ngModel)]=firstname required>
+          <label *ngIf="ref1.touched && ref1.invalid">
+              <p class="text-danger"> *field is Mandatory</p>
+          </label>
+      </div>
+      <div class="form-group">
+          <label style="color:black">Enter MiddleName:</label>
+          <input type="text" name="middlename" class="form-control" [(ngModel)]=middlename>
+      </div>
+      <div class="form-group">
+          <label style="color:black">Enter LastName:</label>
+          <input type="text" name="lastname" class="form-control" #ref2="ngModel" [(ngModel)]=lastname required>
+          <label *ngIf="ref2.touched && ref2.invalid">
+                  <p class="text-danger"> *field is Mandatory</p>
+          </label>
+      </div>
+      <div class="form-group">
+          <label style="color:black">Enter Username:</label>
+          <input type="text" name="Username" class="form-control" #ref3="ngModel" [(ngModel)]=Username required>
+          <label *ngIf="ref3.touched && ref3.invalid">
+                  <p class="text-danger"> *field is Mandatory</p>
+          </label>
+      </div>
+      <div class="form-group">
+          <label style="color:black">Enter Email:</label>
+          <input type="email" name="email" class="form-control" #ref4="ngModel"  [(ngModel)]=emaiil required>
+          <label *ngIf="ref4.touched && ref4.invalid">
+              <p class="text-danger"> *field is Mandatory</p>
+          </label>
+      </div>
+      <div class="form-group">
+          <label style="color:black">Enter Password:</label>
+          <input type="password" name="password" class="form-control" #ref5="ngModel" [(ngModel)]=password pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,20}" required>
+          <label *ngIf="ref5.errors?.pattern && ref5.invalid">
+              <p class="text-danger"> *[password Must be 8 to 20 characters in length,must contain one letter,one number and one special character]</p>
+          </label>
+      </div>
+      <div class="form-group">
+          <label style="color:black">Confirm Password:</label>
+          <input type="password" name="repassword" class="form-control" #ref6="ngModel" [(ngModel)]=repassword pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,20}" required>
+          <label *ngIf="ref6.errors?.pattern && ref6.invalid">
+                  <p class="text-danger"> *[password Must be 8 to 20 characters in length,must contain one letter,one number and one special character]</p>
+          </label>
+      </div>
+      <label style="color:black">Gender:</label>
+      <div class="form-check">
+          <label class="form-check-label">
+          <input type="radio" name="gender" value="male" [(ngModel)]=gender class="form-check-input">Male
+          </label>
+      </div>
+      <div class="form-check">
+              <label class="form-check-label">
+              <input type="radio" name="gender" value="female" [(ngModel)]=gender class="form-check-input">Female
+              </label>
+      </div><br/>
+      <button type="submit" class="btn btn-success">
+        SignUp
+      </button>
+    </form>
+</div>
+    </div>
+    <div class="col-4"></div>
+    </div>
+  </div>
+  

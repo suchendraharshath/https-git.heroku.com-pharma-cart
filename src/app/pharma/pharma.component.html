@@ -1,0 +1,77 @@
+
+    <div class="row">
+    <div class="col-sm-3">
+    <div id="accordion" class="accordion">
+        <div class="card mb-0">
+           <!-- <div class="card-header collapsed" data-toggle="collapse" href="#One">
+                <a class="card-title">
+                    About Diseases
+                </a>
+            </div>
+            <div id="One" class="card-body collapse" data-parent="#accordion" >
+                <a routerLink="diseases">Diseases</a>
+            </div> -->
+
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <a class="card-title">
+                        Baby-Needs
+                    </a>
+                </div>
+                <div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
+                    <a routerLink="babycare">Baby-care</a>
+                </div>
+
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                <a class="card-title">
+                  Personal-Care
+                </a>
+            </div>
+            <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
+                <a class="" routerLink="skincare">skin care</a><br/>
+                <a class="" routerLink="">hair care</a><br/>
+                <a class="" routerLink="">sanitary & hygiene</a><br/>
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                <a class="card-title">
+                  Health-Care
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion" >
+                <div class="card-body">
+                    <a class="" routerLink="firstaid">first aid</a><br/>
+                    <a class="" routerLink=""> pain relief</a><br/>
+                    <a class="" routerLink="">cold relief</a><br/>
+                    <a class="" routerLink="">digestive</a><br/>
+                </div>
+            </div>
+
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#four">
+                <a class="card-title">
+                  Vitamins & Supplements
+                </a>
+            </div>
+            <div id="four" class="collapse" data-parent="#accordion" >
+                <div class="card-body">
+                    <a class="" routerLink="vitamins">vitamins & minarels</a><br/>
+                    <a class="" routerLink="">herbal supplement</a><br/>
+                </div>
+            </div>
+
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#five">
+                <a class="card-title">
+                  Diabetic-Needs
+                </a>
+            </div>
+            <div id="five" class="collapse" data-parent="#accordion" >
+                <div class="card-body">
+                    <a class="" routerLink="diabetics">diabetic nutrition</a><br/>
+                    <a class="" routerLink="">diabetic test needs</a><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-9">      
+      <router-outlet></router-outlet>
+  </div>
+  </div>

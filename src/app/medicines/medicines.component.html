@@ -1,0 +1,108 @@
+<div class="row mt-3">
+  <form #ref=ngForm>
+      <div class="form-group">
+      <input type="text" name="searchTerm" class="form-control ml-3 mt-3" placeholder="Enter medicine name,category" [(ngModel)]="searchTerm"> 
+      </div>
+  </form>
+</div>
+    <br/>
+    <div class="row">
+      <div class="col-2">
+        <form #ref="ngForm" (ngSubmit)="add(ref.value)">
+            <div class="form-group">
+                <label th style="color:blue">Category:</label>
+                <input type="text" name="category" class="form-control" [(ngModel)]=Category>
+              </div>
+          <div class="form-group">
+          <label th style="color:blue">MedicineName:</label>
+          <input type="text" name="medicine" class="form-control" [(ngModel)]=medicine>
+          </div>
+          <div class="form-group">
+          <label th style="color:blue">Price:</label>
+          <input type="number" name="price" class="form-control" [(ngModel)]=price>
+          </div>
+          <div class="form-group">
+          <label th style="color:blue">Quantity</label>
+          <input type="number" name="quantity" class="form-control" [(ngModel)]=quantity>
+          </div>
+          <div class="form-group">
+              <label th style="color:blue">Date</label>
+              <input type="date" name="date" class="form-control" [(ngModel)]=date>
+              </div>
+          <button type="submit" class="btn btn-success">
+            Add
+          </button>
+        </form>
+      </div>
+      <div class="col-10">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <th style="color:blue">Sno</th>
+          <th style="color:blue">Category</th>
+          <th style="color:blue">Medicine Name</th>
+          <th style="color:blue">Price</th>
+          <th style="color:blue">Quantity</th>
+          <th style="color:blue">Expiry date</th>
+          <th style="color:blue">Delete</th>
+          <th style="color:blue">Edit</th>
+        </thead>
+        <tr *ngFor="let i of data | search:searchTerm , let in=index">
+          <td>{{in+1}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.medicine}}</td>
+          <td>{{i.price}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.date}}</td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="delete(in)"><i class="fas fa-trash"></i></button>
+          </td>
+<!--            <button type="button" class="btn btn-info" (click)="Edit(i)"><i class="fas fa-edit"></i></button>
+          </td> 
+        </tr> -->
+        
+        <td>
+            <button  data-target="#y" data-toggle="modal" type="button" class="btn btn-info" (click)="Edit(i)"><i class="fas fa-edit"></i></button>
+          </td>
+        </tr>
+      </table>
+          <div class="modal" id="y">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form #ref1="ngForm">       
+                             <div class="form-group">
+                      <label style="color:blue">Category:</label>
+                    <input type="text" name="category" class="form-control" [(ngModel)]=data1.category>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:blue">MedicineName:</label>
+                    <input type="text" name="medicine" class="form-control" [(ngModel)]=data1.medicine>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:blue">Price:</label>
+                    <input type="number" name="price" class="form-control" [(ngModel)]=data1.price>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:blue">Quantity</label>
+                    <input type="number" name="quantity" class="form-control" [(ngModel)]=data1.quantity>
+                  </div>
+                  <div class="form-group">
+                      <label style="color:blue">Date</label>
+                      <input type="date" name="date" class="form-control" [(ngModel)]=data1.date>
+                    </div>
+                  
+                 
+                 <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal" (click)="save()">save</button>
+                </div>
+              </form>
+            </div>
+                </div>
+              </div>
+            </div>
+
+
+ 
+      
+    </div>
+    </div>

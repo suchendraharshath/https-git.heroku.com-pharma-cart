@@ -1,0 +1,42 @@
+[
+    {
+        "SnoCustomer":"01" ,
+         "Name":"suchendra" ,
+        "Product":"para",	
+         "Quantity":"01" ,	
+         "Date":"12-01-19" ,	
+         "Totalamount":"34" 
+    },
+    {
+        "SnoCustomer":"01" ,
+         "Name":"suchendra" ,
+        "Product":"para",	
+         "Quantity":"01" ,	
+         "Date":"12-01-19" ,	
+         "Totalamount":"34" 
+    },
+    {
+        "SnoCustomer":"01" ,
+         "Name":"suchendra" ,
+        "Product":"para",	
+         "Quantity":"01" ,	
+         "Date":"12-01-19" ,	
+         "Totalamount":"34" 
+    },
+    {
+        "SnoCustomer":"01" ,
+         "Name":"suchendra" ,
+        "Product":"para",	
+         "Quantity":"01" ,	
+         "Date":"12-01-19" ,	
+         "Totalamount":"34" 
+    },
+    {
+        "SnoCustomer":"01" ,
+         "Name":"suchendra" ,
+        "Product":"para",	
+         "Quantity":"01" ,	
+         "Date":"12-01-19" ,	
+         "Totalamount":"34" 
+    }
+]
