@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MedicinesService } from '../medicines.service';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-medicines',
@@ -8,9 +10,10 @@ import { MedicinesService } from '../medicines.service';
 })
 export class MedicinesComponent implements OnInit {
 
-  constructor(private ms:MedicinesService) {   }
+  constructor(private ms:MedicinesService, private http:HttpClient) {   }
   data:object[]=[];
   data1:object[]=[];
+  data2:object[]=[];
   category:string;
   medicine:string;
   price:string;
@@ -40,5 +43,9 @@ export class MedicinesComponent implements OnInit {
   }
   ngOnInit(){
     this.ms.sendmedicinesdata().subscribe(temp=>{this.data=temp})
+  }
+  delete(v)
+  {
+    this.ms.deleteMedicines(v);
   }
 }

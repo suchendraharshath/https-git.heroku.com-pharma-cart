@@ -220,6 +220,26 @@ app.get('/user/cart',(req,res,next)=>{
     })
 })
 
+app.delete('/admin/medicines',(req,res)=>{
+    dbo.collection('medicines').remove({medicine:req.body.medicine},(err,success)=>{
+        if(err){
+            console.log('delete is error');
+        }
+        else
+        {
+            dbo.collection('medicines').find({}).toArray((err,data)=>{
+                if(err){
+                    console.log(err)
+                }
+                else{
+                    res.json(data)
+                }
+                })
+            }
+        })
+    })
+
+
 
 app.listen(process.env.PORT || 8080,()=>{
     console.log('server listning on port 8080...')

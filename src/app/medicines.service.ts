@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MedicinesService {
   data:any[]=[];
+  data1:object[]=[];
   constructor(private http:HttpClient) { }
   receiveFrommedicines(v){
     console.log(v);
@@ -20,5 +21,15 @@ export class MedicinesService {
   updateFrommedicines(v){
     console.log(v);
     this.http.put('admin/medicines',v).subscribe(temp=>alert(temp));
+  }
+
+  deleteMedicines(v){
+    var httpOptions={
+      headers:new HttpHeaders({'Content-type':'application/json'}),
+      body:v
+    }
+    this.http.delete<any>('admin/medicines',httpOptions).subscribe(temp=>this.data1=temp);
+  
+
   }
 }
