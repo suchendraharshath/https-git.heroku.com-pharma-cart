@@ -10,6 +10,8 @@ import { LoginService } from '../login.service';
 export class LoginComponent implements OnInit {
     data1:boolean=false;
     data2:boolean=false;
+    Username:string;
+    password:string;
   constructor(private login:LoginService,private router:Router) { }
 
   ngOnInit() {
