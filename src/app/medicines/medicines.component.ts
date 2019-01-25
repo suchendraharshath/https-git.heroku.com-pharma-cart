@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class MedicinesComponent implements OnInit {
 
   constructor(private ms:MedicinesService, private http:HttpClient) {   }
-  data:any={};
+  data:object[]=[];
   data1:any={};
   data2:any={};
   category:string;
