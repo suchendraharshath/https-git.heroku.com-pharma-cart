@@ -46,8 +46,9 @@ export class MedicinesComponent implements OnInit {
   ngOnInit(){
     this.ms.sendmedicinesdata().subscribe(temp=>{this.data=temp})
   }
-  delete(v)
+  delete(v,p)
   {
+    this.data.splice(p,1);
     this.ms.deleteMedicines(v);
   }
 }
