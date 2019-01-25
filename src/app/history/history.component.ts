@@ -9,6 +9,7 @@ import * as report from 'jspdf';
 })
 export class HistoryComponent implements OnInit {
 data:object[]=[];
+searchTransactions:string;
   constructor(private ds:DataService,@Inject('Window') private window:Window) { }
   ngOnInit() {
     this.ds.getData3().subscribe(temp=>{this.data=temp;})

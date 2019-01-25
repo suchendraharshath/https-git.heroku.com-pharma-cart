@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   Username:string;
   email:string;
   password:string;
+  repassword:string;
   gender:string;
   
   constructor(private ds:SignupService, private router:Router) { 

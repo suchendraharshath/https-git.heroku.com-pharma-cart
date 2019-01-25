@@ -19,6 +19,7 @@ export class MedicinesComponent implements OnInit {
   price:string;
   quantity:string;
   date:string;
+  searchTerm:string;
   add(v)
   {
     console.log(v);
