@@ -11,15 +11,16 @@ import { Observable } from 'rxjs';
 export class MedicinesComponent implements OnInit {
 
   constructor(private ms:MedicinesService, private http:HttpClient) {   }
-  data:object[]=[];
-  data1:object[]=[];
-  data2:object[]=[];
+  data:object=[];
+  data1:object=[];
+  data2:object=[];
   category:string;
   medicine:string;
   price:string;
   quantity:string;
   date:string;
   searchTerm:string;
+
   add(v)
   {
     console.log(v);
@@ -28,7 +29,7 @@ export class MedicinesComponent implements OnInit {
   this.price=v;
   this.quantity=v;
   this.date=v;
-  this.data.push(v);
+  //this.data.push(v);
   this.category=" ";
   this.medicine=" ";
   this.price="";
