@@ -9,7 +9,7 @@
               <th>quantity</th>
               <th>amount</th>
             </thead>
-            <tr *ngFor="let i of data;let in=index">
+            <tr *ngFor="let i of data ; let in=index">
               <td>{{in+1}}</td>
               <td>{{i.medicine}}</td>
               <td>{{i.price}}</td>

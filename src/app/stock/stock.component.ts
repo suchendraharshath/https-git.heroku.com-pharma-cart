@@ -9,6 +9,7 @@ import { MedicinesService } from '../medicines.service';
 export class StockComponent implements OnInit {
   data:object[]=[];
   search:string;
+  p:string;
   constructor(private ms:MedicinesService) {
   
    }

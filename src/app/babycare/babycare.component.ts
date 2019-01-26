@@ -9,6 +9,7 @@ import { CartService } from '../cart.service';
 })
 export class BabycareComponent implements OnInit {
   data:object[]=[];
+  p:string;
   constructor(private ms:MedicinesService, private cart:CartService) { }
   
   ngOnInit() {

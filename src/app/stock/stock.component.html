@@ -19,7 +19,7 @@
               <th style="color:blue">Quantity</th>
               <th style="color:blue">Expiry date</th>
             </thead>
-            <tr *ngFor="let i of data, let in=index">
+            <tr *ngFor="let i of data | paginate:{itemsPerPage:3, currentPage:p} , let in=index">
               <td>{{in+1}}</td>
               <td>{{i.category}}</td>
               <td>{{i.medicine}}</td>
@@ -28,6 +28,7 @@
               <td>{{i.date}}</td>
             </tr>
           </table>
+          <pagination-controls (pageChange)="p=$event"></pagination-controls>
         </div>
         <div class="col-1"></div>
         </div>

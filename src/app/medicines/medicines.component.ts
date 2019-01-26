@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./medicines.component.css']
 })
 export class MedicinesComponent implements OnInit {
-
+  p:string;
   constructor(private ms:MedicinesService, private http:HttpClient) {   }
   data:object[]=[];
   data1:any={};
