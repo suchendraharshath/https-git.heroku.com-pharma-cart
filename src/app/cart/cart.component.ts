@@ -20,6 +20,12 @@ export class CartComponent implements OnInit {
     //getting data from cart
     this.cart.sendCartdata().subscribe(temp=>{this.data=temp})
   }
+
+  delete(v,p)
+  {
+    this.data.splice(p,1);
+    this.cart.deleteCart(v);
+  }
   
   
 

@@ -239,6 +239,25 @@ app.delete('/admin/medicines',(req,res)=>{
         })
     })
 
+    app.delete('/user/cart',(req,res)=>{
+        dbo.collection('cart').remove({medicine:req.body.medicine},(err,success)=>{
+            if(err){
+                console.log('delete is error');
+            }
+            else
+            {
+                dbo.collection('cart').find({}).toArray((err,data)=>{
+                    if(err){
+                        console.log(err)
+                    }
+                    else{
+                        res.json(data)
+                    }
+                    })
+                }
+            })
+        })
+
 
 
 app.listen(process.env.PORT || 8080,()=>{

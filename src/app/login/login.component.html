@@ -1,11 +1,15 @@
 <div class="container mt-3">
 <div class="row">
   <div class="col-2"></div>
-<div class="col-8">
+<div class="jumbotron col-8 mb-3">
   <div>
     <h3 class="text-center text-info"><i class="fas fa-user fa-3x "></i></h3>
     <h2 class="text-center" style="color:blue">Login page</h2>
     <br/>
+    <div class="card">
+    <article class="card-body">
+    <a class="float-right btn btn-outline-primary" routerLink="signup">Sign up</a>
+    <h4 class="card-title mb-4 mt-1">Sign in</h4>
     <form #ref="ngForm" (ngSubmit)="add(ref.value)">
       <div class="form-group">
       <label class="text-danger" for="#a">Username</label>
@@ -17,10 +21,12 @@
       </div>
     <a routerLink='forgotpassword'>ForgotPassword?</a>
     <button type="submit" class="btn btn-info ml-5">Login</button>
-    <p>If not register
-      <a routerLink="signup">SignUp</a>
-    </p>
+   <!-- <br/>
+      <a class="float-right btn btn-outline-primary" routerLink="signup">SignUp</a>
+      <h4 class="card-title mb-4 mt-1">If not register</h4> -->
   </form>
+  </article>
+  </div>
   </div>
    </div>
    <div class="col-2"></div>

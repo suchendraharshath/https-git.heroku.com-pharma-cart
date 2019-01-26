@@ -13,7 +13,6 @@ export class MedicinesComponent implements OnInit {
   constructor(private ms:MedicinesService, private http:HttpClient) {   }
   data:object[]=[];
   data1:any={};
-  data2:any={};
   category:string;
   medicine:string;
   price:string;

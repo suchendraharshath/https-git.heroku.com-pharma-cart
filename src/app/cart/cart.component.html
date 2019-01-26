@@ -8,6 +8,7 @@
               <th>price</th>
               <th>quantity</th>
               <th>amount</th>
+              <th>Delete</th>
             </thead>
             <tr *ngFor="let i of data ; let in=index">
               <td>{{in+1}}</td>
@@ -15,6 +16,7 @@
               <td>{{i.price}}</td>
               <td> </td>
               <td> </td>
+              <td> <button type="button" class="btn btn-danger" (click)="delete(i,in)"><i class="fas fa-trash"></i></button></td>
             </tr>
              <button type="button" class="btn btn-info">Buy</button>
           </table>

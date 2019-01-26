@@ -29,7 +29,5 @@ export class MedicinesService {
       body:v
     }
     this.http.delete<any>('admin/medicines',httpOptions).subscribe(temp=>this.data1=temp);
-  
-
   }
 }
