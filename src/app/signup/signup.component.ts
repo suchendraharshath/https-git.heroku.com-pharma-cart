@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   firstname:string;
-  middlename:string;
+ // middlename:string;
   lastname:string;
   Username:string;
   email:string;
