@@ -9,23 +9,30 @@
         <article class="card-body">
       <form #ref="ngForm" (ngSubmit)="add(ref.value)">
       <div class="form-group">
+          <div class="row">
+            <div class="col-6">
           <label style="color:black">Enter FirstName:</label>
           <input type="text" name="firstname" class="form-control" #ref1="ngModel" [(ngModel)]=firstname required>
           <label *ngIf="ref1.touched && ref1.invalid">
               <p class="text-danger"> *field is Mandatory</p>
           </label>
-      </div>
+            </div>
+      
      <!-- <div class="form-group">
           <label style="color:black">Enter MiddleName:</label>
           <input type="text" name="middlename" class="form-control" [(ngModel)]=middlename>
       </div> -->
-      <div class="form-group">
+      <div class="col-6">
           <label style="color:black">Enter LastName:</label>
           <input type="text" name="lastname" class="form-control" #ref2="ngModel" [(ngModel)]=lastname required>
           <label *ngIf="ref2.touched && ref2.invalid">
                   <p class="text-danger"> *field is Mandatory</p>
           </label>
       </div>
+    </div>
+    </div>
+
+
       <div class="form-group">
           <label style="color:black">Enter Username:</label>
           <input type="text" name="Username" class="form-control" #ref3="ngModel" [(ngModel)]=Username required>
@@ -65,7 +72,7 @@
               <input type="radio" name="gender" value="female" [(ngModel)]=gender class="form-check-input">Female
               </label>
       </div><br/>
-      <button type="submit" class="btn btn-success">
+      <button type="submit" class="btn btn-success mx-auto d-block">
         SignUp
       </button>
     </form>
