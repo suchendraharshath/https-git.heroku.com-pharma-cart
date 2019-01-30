@@ -10,7 +10,7 @@ export class SignupService {
   constructor(private http:HttpClient, private router:Router) { }
   receiveFromsignup(v){
     this.data=v;
-    this.http.post('home/signup',v).subscribe(temp=>{alert(temp)
+    this.http.post('api/home/signup',v).subscribe(temp=>{alert(temp)
     if(temp==="registration succesfull"){
       this.router.navigate(["home/login"]);
     }

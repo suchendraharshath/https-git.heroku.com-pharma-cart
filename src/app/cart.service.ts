@@ -10,12 +10,20 @@ data:string;
   constructor(private http:HttpClient) { }
   sendTocart(v){
     console.log(v);
-    this.http.post('user/pharma/babycare',v).subscribe(temp=>{alert(temp)});
+    this.http.post('api/user/pharma/babycare',v).subscribe(temp=>{
+      if(temp['message']=='Token is not valid'){
+        alert(temp['message']);
+      }
+      else{
+        alert(temp);
+      }
+      //{alert(temp)}
+    });
   }
 
   sendCartdata():Observable<any>
   {
-    return this.http.get<any>('user/cart')
+    return this.http.get<any>('api/user/cart')
   }
 
   deleteCart(v){
@@ -23,7 +31,15 @@ data:string;
       headers:new HttpHeaders({'Content-type':'application/json'}),
       body:v
     }
-    this.http.delete<any>('user/cart',httpOptions).subscribe(temp=>this.data=temp);
+    this.http.delete<any>('api/user/cart',httpOptions).subscribe(temp=>{
+      if(temp['message']=='Token is not valid'){
+        alert(temp['message']);
+      }
+      else{
+        this.data=temp;
+      }
+      //this.data=temp
+    });
   }
 
 }

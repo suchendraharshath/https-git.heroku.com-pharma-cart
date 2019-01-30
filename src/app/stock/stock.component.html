@@ -1,11 +1,11 @@
   
         <div class="row pt-5" style="background-color: white">
-          <form #ref=ngForm>
+        <!--  <form #ref=ngForm>
           <div class="form-group">
           <input type="text" name="search" class="form-control ml-3" placeholder="search..." [(ngModel)]=search> 
           </div>
           
-          </form>
+          </form> -->
         </div>
         <div class="row">
           <div class="col-1"></div>
@@ -19,7 +19,7 @@
               <th style="color:blue">Quantity</th>
               <th style="color:blue">Expiry date</th>
             </thead>
-            <tr *ngFor="let i of data | paginate:{itemsPerPage:3, currentPage:p} , let in=index">
+            <tr *ngFor="let i of (data | paginate:{itemsPerPage:3,currentPage:p}); let in=index">
               <td>{{in+1}}</td>
               <td>{{i.category}}</td>
               <td>{{i.medicine}}</td>

@@ -9,13 +9,22 @@ import { MedicinesService } from '../medicines.service';
 export class StockComponent implements OnInit {
   data:object[]=[];
   search:string;
-  p:string;
+  p:number;
   constructor(private ms:MedicinesService) {
   
    }
 
   ngOnInit() {
-    this.ms.sendmedicinesdata().subscribe(temp=>{this.data=temp})
+    this.ms.sendmedicinesdata().subscribe(temp=>{
+      if(temp['message']=='Token is not valid'){
+        alert(temp['message']);
+      }
+      else{
+        this.data=temp
+      }
+    })
+      
+      //{this.data=temp})
     console.log(this.data)
   }
 

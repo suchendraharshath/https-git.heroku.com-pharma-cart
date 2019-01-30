@@ -11,16 +11,16 @@ export class MedicinesService {
   constructor(private http:HttpClient) { }
   receiveFrommedicines(v){
     console.log(v);
-    this.http.post('admin/medicines',v).subscribe(temp=>{alert(temp)});
+    this.http.post('api/admin/medicines',v).subscribe(temp=>{alert(temp)});
   }
   sendmedicinesdata():Observable<any>
   {
-    return this.http.get<any>('admin/stock')
+    return this.http.get<any>('api/admin/stock')
   }
 
   updateFrommedicines(v){
     console.log(v);
-    this.http.put('admin/medicines',v).subscribe(temp=>alert(temp));
+    this.http.put('api/admin/medicines',v).subscribe(temp=>alert(temp));
   }
 
   deleteMedicines(v){
@@ -28,6 +28,6 @@ export class MedicinesService {
       headers:new HttpHeaders({'Content-type':'application/json'}),
       body:v
     }
-    this.http.delete<any>('admin/medicines',httpOptions).subscribe(temp=>this.data1=temp);
+    this.http.delete<any>('api/admin/medicines',httpOptions).subscribe(temp=>this.data1=temp);
   }
 }

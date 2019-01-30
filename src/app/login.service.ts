@@ -10,6 +10,6 @@ data:object;
 
   receiveFromlogin(v):Observable<any>{
     this.data=v;
-    return this.http.post('home/login',v);
+    return this.http.post('api/home/login',v);
   }
 }

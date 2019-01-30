@@ -11,6 +11,6 @@ export class UserdetailsService {
 
 userdetails():Observable<any>
 {
-  return this.http.get<any>('admin/userdetails')
+  return this.http.get<any>('api/admin/userdetails')
 }
 }

@@ -19,17 +19,17 @@ export class LoginComponent implements OnInit {
 
 add(v)
 {
-  this.login.receiveFromlogin(v).subscribe(temp=>{alert(temp)
-    if (temp=="invalid username"){
+  this.login.receiveFromlogin(v).subscribe(res=>{ localStorage.setItem('id-token',res['idtoken']);
+    if (res=="invalid username"){
       this.router.navigate(['home/login']);
       this.data1=!this.data1;
     }
-    else if(temp=="wrong password")
+    else if(res=="wrong password")
     {
       this.router.navigate(['/home/login']);
       this.data2=!this.data2;
     }
-    else if(temp=="logged in successfully"){
+    else{
       if(v.Username=="suchendra" && v.password=="suchendra@123"){
         this.router.navigate(['admin'])
       }

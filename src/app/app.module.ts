@@ -20,12 +20,13 @@ import { UserComponent } from './user/user.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { Home1Component } from './home1/home1.component';
 import { MedicinesComponent } from './medicines/medicines.component'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DiseasesComponent } from './diseases/diseases.component'; 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchPipe } from './search.pipe';
 import { HistoryComponent } from './history/history.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AuthorizationService } from './authorization.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,11 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthorizationService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
